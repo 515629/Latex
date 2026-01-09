@@ -1,0 +1,34 @@
+{
+	"pic": {
+        "prefix": "pic",
+        "body": [
+            "\\begin{figure}[H]",
+			"	\\centering",
+			"	\\includegraphics[width=1\\textwidth]{$1}",
+			"	\\caption{$2}",
+			"	\\label{$3}",
+		  	"\\end{figure}"
+        ],
+        "description": "図表テンプレ"
+	}
+
+	"pic2": {
+		"prefix": "pic2",
+		"body": [
+			"\\begin{figure}[H]",
+			"	\\begin{minipage}{0.5\\hsize}",
+			"		\\centering",
+			"		\\includegraphics[width=1\\textwidth]{$1}",
+			"		\\caption{$2}",
+			"		\\label{$3}",
+			"	\\end{minipage}",
+			"	\\begin{minipage}{0.5\\hsize}",
+			"		\\centering",
+			"		\\includegraphics[width=1\\textwidth]{$4}",
+			"		\\caption{$5}",
+			"		\\label{$6}",
+			"	\\end{minipage}",
+			"\\end{figure}	
+		]
+	}
+}

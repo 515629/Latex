@@ -1,0 +1,107 @@
+%第1章
+\part{序論}
+\label{zyoron}
+
+\section {ニューマチックケーソン工法における作業の無人化}
+\subsection{研究背景}
+
+近年, 危険な場所での作業による事故などを無くすため, 急速に作業の機械化・無人化が進められてきた.
+ロボットは人の代わりとなり, 様々な作業を効率良く行うツールとしてこれまで広く普及されてきたが, 現場環境に応じた様々な問題点も挙げられている.
+
+\subsubsection{ニューマチックケーソン工法とは}
+
+橋梁や建物の基礎の構築に使用される工法として, ニューマチックケーソン工法が挙げられる.
+
+ニューマチックケーソン工法とは, 地上に構築した構造物の直下を掘削・排土する事で, 地下に沈設する工法である.
+地上に構築する構造物は函（躯体）と呼ばれ, その最下部の作業室と称する密閉された部屋に高圧な空気を送り込む事で, 地下水の侵入を防ぎ地上と同じような状態で掘削を行う事ができる利点がある.
+
+橋梁や建物の基礎の他に, シールドトンネルの立杭や下水ポンプ場, 地下調整池, あるいは地下鉄や道路トンネルなど, 幅広く活用されている.\cite{koukyou}
+
+\subsubsection{大深度ニューマチックケーソン工法と工法の問題点}
+
+大深度開発事業を行うために, 水面下70[m]までの地下構造物の構築を可能にする工法を大深度ニューマチックケーソン工法（以下ケーソン工法）と呼ぶ.
+沈設方法はニューマチックケーソン工法と同様であるが, 理論作業気圧を0.7[MPa]まで上げる事で, より深くに地下構造物の構築する事を可能にしている.
+しかし作業気圧が0.4[MPa]を超える工事は, 減圧症や高気圧障害の発生リスクがある為, 作業の無人化が求められている.
+ケーソン工法の概要を図\ref{ke-son1}に示す.\cite{paint}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.60\textwidth]{ke-son_gaiyo.png}
+	\caption{Overview of deep pneumatic caisson construction method\cite{paint}}
+	\label{ke-son1}
+\end{figure}
+
+\newpage
+
+
+\subsection{先行機体}
+\subsubsection{クローラ型移動ロボット}
+現在作業空間内ではクローラ型移動ロボットが作業を行っている.
+図\ref{sennkou1}, \ref{sennkou2}に示す.
+
+
+\begin{figure}[H]
+  \begin{minipage}{0.5\hsize}
+    \centering
+    \includegraphics[height=50mm]{sennkoukitai1.png}
+    \caption{Demolition robot\cite{youtuu}}
+    \label{sennkou1}
+  \end{minipage}
+  \begin{minipage}{0.5\hsize}
+    \centering
+    \includegraphics[height=50mm]{sennkoukitai2.png}
+    \caption{Transportation robot\cite{youtuu}}
+    \label{sennkou2}
+  \end{minipage}
+\end{figure}
+
+
+\subsubsection{スタックを起こす原因}
+クローラ型移動ロボットは, 駆動部の進行方向に対して高い踏破性能を持ち, 不整地での走行において広く普及している.
+
+しかしクローラ型移動ロボットは, 機体側面の障害物に対しての踏破性能が低いという問題点がある.
+また, クローラ型移動ロボットは超信地旋回という旋回方式を取るが, 泥濘地で超信地旋回を行うと地面を掘ってしまい, 弱点である機体側面に障害物を生成してしまう.
+
+よって現行のロボットは機体側面に生じた障害によりスタックを起こすと推測できる.
+
+クローラ型移動ロボットがスタックを起こしている状態を図\ref{sennkou3}に示す.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{stack1.png}
+  \caption{robot stuck\cite{ih-catalog}}
+	\label{sennkou3}
+\end{figure}
+
+\newpage
+
+\subsection{研究目的}
+作業空間は圧力により地下水の侵入を防いでいるため泥濘地である場合があり, また掘削による起伏や溝などの存在も想定される.
+
+現在も作業空間内ではロボットが作業を行っているが, 上記の理由からスタックを起こす事があり復旧には人手を要するため, 作業の無人化が滞っている.
+
+作業空間内でスタックを起こす事が無くなれば作業の無人化に大きく近づく為, 本研究では作業空間内で想定される環境でスタックを起こさないロボットの開発を研究目的とする.
+作業空間内の状態の一例を図\ref{ke-son2}に示す.\cite{ih-group}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{ke-son_kankyo.png}
+  \caption{Condition inside the work room\cite{ih-group}}
+	\label{ke-son2}
+\end{figure}
+
+\subsection{本書の構成}
+本論文は5章構成となっている.
+第1章ではニューマチックケーソン工法の概要と先行機体の問題点を指摘し, 本研究の目的を提示した.
+
+第2章では目的を達成する為に過去に取り組まれた研究とその問題点に対して言及し, 本研究の目標を説明する.
+
+第3章では目標の達成を目指した機体の構想を提示し, 設計図を示したのちに製作機体の説明をする.
+
+第4章では製作した機体を使用し, 研究目標が達成可能かの実験についての説明をし, 実験結果と考察を論じる.
+
+第5章では本論の結論と今後の展望について説明する.
+
+
+

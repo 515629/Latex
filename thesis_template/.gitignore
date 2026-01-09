@@ -1,0 +1,23 @@
+# LaTeXで一般的に無視するファイル
+*.aux
+*.log
+*.out
+*.toc
+*.bak
+*.nav
+*.snm
+*.dvi
+*.bbl
+*.blg
+*.thm
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.ini
+*.mp4
+*.synctex
+*.synctex(busy)
+*.code-workspace
+*.docx
+*.gz

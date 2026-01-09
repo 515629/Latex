@@ -1,0 +1,192 @@
+\newpage
+\part{機体概要}
+\section{機体構想}
+
+旋回時に地面を掘る原因として, 各クローラ回転時のベクトルと機体が進むベクトルの角度に大きな差が生じる事で, 横方向に滑る力が働く事が考えられる.
+そして機体が進むベクトルと同方向に推力を加える駆動部や段差踏破機構がない為, スタックしてしまう.
+    
+上記の問題を解決するためには, 各駆動部の方向が円形に可変な機構を搭載する必要があると考えた.
+
+各駆動部の向きが円形に変形することで, 円の接線方向に向いている推力のベクトルの数が増加し, 機体側面の障害物に対しての踏破が可能となる事でスタックを防ぐ事が可能になると考えられる.
+
+この機構を搭載し, 変形動作を行う為には駆動部の側面は極力短くして地面を掘る面積を抑える必要がある.
+よって本機体ではクローラではなく車輪を採用し, 駆動部はユニットに分割する方式を採用した.
+
+車輪方向の動作イメージを図\ref{syarinnhoukou_image}に示す.
+
+\vspace{5mm}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{syarinnhoukou_image1.png}
+  \vspace{5mm}
+  \caption{image of movement with variable direction}
+  \label{syarinnhoukou_image}
+\end{figure}
+
+\newpage
+
+\subsection{機体構想（全体図）}
+
+機体構想の全体図を図\ref{kitaikousou_zenntai}に示す.
+先述の通り, 変形する際に各車輪の向きが円形になる必要がある為, 駆動部を各車輪ごとで8つのユニットに分割している.
+
+本機体ではアクチュエータの数が非常に多くなる為, 中央の6ユニットは多重歯車機構により連動させる事で, 省アクチュエータ化を図っている.
+また移動効率の面から, 変形動作を行わずに旋回する事も可能である必要がある為, 前後のユニットには独立ステアリング機構を搭載している.
+
+\vspace{2mm}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{kitaikousou_zenntaizu.png}
+  \vspace{4mm}
+  \caption{Overall aircraft concept}
+  \label{kitaikousou_zenntai}
+\end{figure}
+
+
+\subsection{機体構想（機体上部）}
+
+機体上部の構想を図\ref{kitaikousou_zyoubu}に示す.
+本機体は高重量の運搬物を積載する事が想定される為, 荷重を機体全面に分散させるためには可動ユニットにも荷重をかける必要がある.
+
+よって変形動作を阻害しないように天板との接触面にキャスターを設置することで, 変形動作時の摩擦を軽減し, かつ荷重をかける事を可能とする.
+
+\vspace{2mm}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{kitaikousou_zyoubuzu.png}
+  \vspace{4mm}
+  \caption{Upper fuselage concept}
+  \label{kitaikousou_zyoubu}
+\end{figure}
+
+\vspace{2mm}
+
+\newpage
+
+\subsection{機体構想（各ユニット）}
+
+各ユニットの機体構想を図\ref{kitaikousou_yunito}に示す.本機体は泥濘地を走行することも想定されている為, 車輪とモータの位置をずらしてベルトにより動力を伝達する事で, 防水防塵対策を行っている.
+
+また, 本機体にはサスペンション機構を搭載する構想にしている.
+サスペンション機構を搭載する事で, 不整地上でも全てのユニットが接地可能であり, 地面に対して推力をよく伝える事が出来ると考えている.
+さらに走行時の機体上部への影響を抑えるだけでなく, 段差踏破時の安定性を向上する事も出来ると考えている.
+
+しかし本機体はモータの配置をずらしている為, 通常のサスペンションのように車軸に取り付ける事は難しい.
+よって図\ref{kitaikousou_sasupennsyonn}に示すように, 平面間に取り付ける構想を考えている.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{kitaikousou_yunitozu.png}
+  \vspace{-3mm}
+  \caption{Each unit aircraft concept}
+  \label{kitaikousou_yunito}
+\end{figure}
+
+\vspace{2mm}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{kitaikousou_sasupennsyonnzu.png}
+  \vspace{-3mm}
+  \caption{Suspension concept}
+  \label{kitaikousou_sasupennsyonn}
+\end{figure}
+
+
+\newpage
+\section{機体設計図}
+機体構想を元にした設計図を図 \ref{kitaisekkei1}に示す.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{kitaisekkeizu1.png}
+  \vspace{-3mm}
+  \caption{machine blueprint}
+  \label{kitaisekkei1}
+\end{figure}
+
+\subsection{変形前後の機体イメージ}
+直進時の機体を図\ref{kitaisekkei_tyokusinn}, 旋回時の機体を\ref{kitaisekkei_sennkai}に示す.
+
+
+\begin{figure}[H]
+  \begin{minipage}{0.45\hsize}
+    \centering
+    \includegraphics[height=90mm]{kitaisekkei_tyokusinnzu.png}
+    \caption{Shape when traveling straight}
+    \label{kitaisekkei_tyokusinn}
+  \end{minipage}
+  \begin{minipage}{0.5\hsize}
+    \centering
+    \includegraphics[height=90mm]{kitaisekkei_sennkaizu.png}
+    \caption{shape when turning}
+    \label{kitaisekkei_sennkai}
+  \end{minipage}
+\end{figure}
+
+
+
+\newpage
+
+\section{機体製作}
+機体構想を元に製作した機体を図 \ref{prot1}に示す.
+
+機体のアスペクト比は現在使用されているクローラ型ロボットと同様, 約1.6 : 1 で製作を行った.
+
+電源を除く機体諸元を表 \ref{specification}に示す.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{robot_1_1.png}
+  \caption{produced machine}
+  \label{prot1}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Specification of machine}
+  \vspace{1mm}
+  \scalebox{1.5}{
+    \begin{tabular}{cc} \hline
+      Length & 870[mm] \\
+      Width & 560[mm] \\
+      Height & 360[mm] \\ 
+      Weight & 57.8[kg] \\ \hline
+    \end{tabular}
+  }
+  \label{specification}
+\end{table}
+
+
+\newpage
+
+\subsection{サスペンション機構}
+各ユニット取り付けたサスペンション機構を図 \ref{kitaiseisaku_sasupennsyonn}に示す.
+
+先述の通り本機体は8輪であるため, サスペンション機構搭載する事で上下方向に自由度を追加し, 段差踏破時の安定性向上を図っている.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{kitaiseisaku_sasupennsyonnzu.jpg}
+  \caption{suspension mechanism}
+  \label{kitaiseisaku_sasupennsyonn}
+\end{figure}
+
+\subsection{特殊車輪の製作}
+走行環境は鉄板などの硬質な素材から含水率の高い流体状の地面まで様々である為, 様々な環境に合わせた特殊な形状の車輪を設計した.
+図 \ref{prot2}に示す.
+
+泥濘地の走行では, 接地面積の少なさを改善するために溝を作り表面積を増やした. さらに走行時に溝で泥を掻く事で, より推力を出す事ができると考える.
+    
+硬質な素材上では点接地の方が摩擦を軽減できて走行効率が上がる為, 車輪中央のみ溝を無くしている.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{robot_1_3.png}
+  \caption{special shaped wheels}
+  \label{prot2}
+\end{figure}
+
