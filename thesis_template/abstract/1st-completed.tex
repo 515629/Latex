@@ -29,9 +29,9 @@
     
     \makeatother
     
-    \abstract{This paper describes the development of a transport robot with a mechanism that can prevent the robot from getting stuck in muddy ground. The method envisioned in this paper requires excavation directly under the structure to create a space up to a certain depth, but the work must be unmanned because of the high-pressure environment in the space, which is harmful to the human body. However, the crawler-type robots currently in use get stuck in muddy areas. We developed the aircraft with the idea that the orientation of the drive unit of the aircraft could be transformed into a circular shape to prevent it from getting stuck.
+    \abstract{This paper describes the development of a magnetically adhered wall-climbing robot equipped with a scraper mechanism for paint removal on steel bridge surfaces.Conventional paint removal work requires significant manual labor under harsh conditions.To reduce the physical burden on workers, a robot capable of adhering to steel surfaces and moving stably on vertical walls was developed.The proposed robot uses magnetic adhesion for wall-climbing locomotion and a scraper mechanism whose blade angle can be adjusted by a linear actuator.Experiments were conducted on an actual steel bridge surface after paint heating.As a result, stable wall-climbing locomotion was achieved.Although continuous paint removal by self-propelled scraping was difficult due to insufficient driving torque and adhesion force, paint removal was successfully performed after an initial insertion of the scraper.These results clarify the requirements for adhesion force and blade angle control in scraper-based paint removal robots.
     }
-    
+
     \keywords{Wall-climbing robot, Magnetic adhesion, Paint removal, Scraper mechanism}
 
     \maketitle
@@ -41,17 +41,16 @@
     \section{緒\hspace{2zw}言}%===========================
     
     
-    本研究は, オリエンタル白石株式会社と共同で行い, ニューマチックケーソン工法（以下ケーソン工法）において必要となる運搬ロボットについて研究を行う.
-
-    ケーソン工法とは, 地上に構築した構造物の直下を掘削・排土する事で, 地下に沈設する工法である.
-    掘削を行う作業空間は地下水の侵入を防ぐために高圧な環境下であり, 人体に影響が出る為作業の無人化が求められている.
+    鋼橋の塗替え工事における塗膜剥離作業は，作業者に大きな身体的負担を強いる作業であり，
+    作業環境の改善および省力化が求められている．
+    近年，高周波誘導加熱を用いた塗膜除去技術が実用化されているが，
+    加熱後の塗膜剥離作業は依然として人手に依存している．
     
-    現在はクローラ型のロボットが作業しているが, 作業空間は泥濘地でありスタックを起こす可能性がある.
+    これまでに，磁気吸着を用いた壁面走行ロボットによる加熱作業の研究が行われてきたが，
+    加熱後の塗膜を自動的に剥離する機構については十分な検討がなされていない．
+    そこで本研究では，磁気吸着により鋼橋壁面を走行可能なロボットに，
+    スクレーパ式塗膜剥離機構を搭載し，その有効性について検討する．
 
-    クローラ型のロボットがスタックする原因として, 旋回時に履帯の側面で地面を掘ることや, 側面方向の障害物に弱い点が挙げられる.
-
-    本研究では, 作業空間内でのスタックを防止するロボットの開発を目的とする.
-    
     \section{研究目標}%===========================
     以下に表記する, 作業空間で想定される環境を走破可能である事を目標とする.
 
