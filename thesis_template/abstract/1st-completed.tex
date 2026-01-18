@@ -1,22 +1,19 @@
-\documentclass[10pt]{jarticle}
-\usepackage{float}
-\usepackage{adrobo_abst}
-\usepackage[dvipdfmx]{graphicx}
-\usepackage{amssymb,amsmath}
-\usepackage{bm}
-\usepackage[superscript]{cite}
-\usepackage{enumerate}
-\usepackage{url}
-\usepackage{comment}
-%\usepackage[absolute]{textpos}
+\documentclass[10pt]{jarticle} 
+\usepackage{float} 
+\usepackage{adrobo_abst} 
+\usepackage[dvipdfmx]{graphicx} 
+\usepackage{amssymb,amsmath} 
+\usepackage{bm} 
+\usepackage[superscript]{cite} 
+\usepackage{enumerate} 
+\usepackage{url} 
+\usepackage{comment} 
+%\usepackage[absolute]{textpos} 
 
-\setlength\intextsep{5pt}
-\setlength\textfloatsep{5pt}
-
-\renewcommand\citeform[1]{(#1)}
-
-\graphicspath{{../fig/}}
-
+\setlength\intextsep{5pt} 
+\setlength\textfloatsep{5pt} 
+\renewcommand\citeform[1]{(#1)} 
+\graphicspath{{../fig/}} 
 \begin{document}
 
 \makeatletter
@@ -29,100 +26,133 @@
 \makeatother
 
 \abstract{
-This paper describes the development of a magnetically adhered wall-climbing system equipped with a scraper mechanism for paint removal on steel bridge surfaces.
-Conventional paint removal work requires significant manual labor under harsh conditions.
-To reduce the physical burden on workers, a system capable of adhering to steel surfaces and moving stably on vertical walls was developed.
-The proposed system uses magnetic adhesion for wall-climbing locomotion and a scraper mechanism whose blade angle can be adjusted by a linear actuator.
-Evaluations were conducted on an actual steel bridge surface after paint heating.
-As a result, stable wall-climbing locomotion was achieved.
-Although continuous paint removal by self-propelled scraping was difficult due to insufficient driving torque and adhesion force,
-paint removal was successfully performed after an initial insertion of the scraper.
-These results clarify the requirements for adhesion force and blade angle control in scraper-based paint removal systems.
+This study focuses on automating the paint removal process on steel bridges using 
+a magnetically adhered wall-climbing system. While previous research has developed robots 
+for induction heating (IH) to loosen paint, the subsequent scraping process remains a manual task. 
+We developed a specialized mobile chassis using two-wheel drive and a free roller 
+for stable three-point contact. The system uses 20 neodymium magnets with a 5 mm gap. 
+Field tests on an actual bridge revealed that the reaction force during self-propelled scraping 
+caused the front of the chassis to lift, leading to a stall. 
+However, successful peeling was achieved following a manual initial cut. 
+Insights from industrial partners suggest that dynamic blade angle control—transitioning 
+from a 40-degree insertion angle to a 10-degree peeling angle—is crucial for automated operation.
 }
 
 \keywords{Wall-climbing system, Magnetic adhesion, Paint removal, Scraper mechanism}
 
 \maketitle
 
-\supervisor{指導教員：米田完 教授}
+\supervisor{指導教員：米田 完 教授}
 
 %===========================
 \section{緒\hspace{2zw}言}
 
-鋼橋の塗替え工事における塗膜剥離作業は，作業者に大きな身体的負担を強いる工程であり，
-作業環境の改善および省力化が求められている．
-近年，高周波誘導加熱を用いた塗膜除去技術が実用化されているが，
-加熱後の塗膜剥離作業は依然として人手に依存している．
+鋼橋の塗替え作業における塗膜剥離は，
+高所かつ過酷な環境下での重労働であり，
+作業者の負担軽減が急務である．
+日本橋梁との共同研究において，
+これまで高周波誘導加熱（IH）を用いて塗膜を浮かせ，
+剥離を容易にする装置や，
+それを搭載したメカナムホイール式等の走行ロボットが開発されてきた．
+しかし，加熱後に浮いた塗膜をスクレーパで剥がす工程は依然として人手に依存しており，
+この「剥離工程」の自動化が新たな課題となっている．
 
-これまでに磁気吸着を用いた壁面走行機構の研究は行われてきたが，
-加熱後の塗膜をスクレーパによって剥離する工程については，
-十分な検討がなされていない．
-そこで本研究では，磁気吸着による壁面走行機構を備えた機体を開発し，
-スクレーパ式塗膜剥離の成立性と課題を評価する．
-
-%===========================
-\section{研究目的}
-
-本研究の目的は，磁気吸着により鋼橋壁面を安定して走行可能な機体を製作し，
-加熱後の塗膜に対するスクレーパ式剥離の成立性を評価するとともに，
-実環境における課題および改善指針を明らかにすることである．
+先行研究ではIH加熱ヘッドの搬送を主目的としていたが，
+剥離作業では進行方向と逆向きに大きな剥離反力が作用する．
+本研究では，剥離作業に特化した新たな磁気吸着足回り機構を開発し，
+実環境における剥離の成立性と設計課題を明らかにすることを目的とする．
 
 %===========================
 \section{機体構成}
 
-本研究で製作した機体は，磁気吸着による壁面走行機構と，
-スクレーパ式塗膜剥離機構から構成される．
-機体の質量は 8.18\,kg であり，
-全長 300\,mm，全幅 400\,mm，全高 200\,mm の寸法で製作した．
-スクレーパの刃角はシリンダによって調整可能であり，
-走行中に刃角を変更できる構成とした．
+  \subsection{足回り機構の設計}
+  剥離作業は主に鉛直方向（一方向）の力を必要とするため，
+  先行研究のメカナムホイール式ではなく，
+  対向二輪とフリーローラーによる三点支持構造を採用した（図1）．
+  これにより，機体前方のスペースを確保しつつ，
+  壁面への追従性を高めた．
+  吸着部には角型皿穴付ネオジム磁石（N40，$35 \times 20 \times 5$\,mm，表面磁束密度 255\,mT）を計20個搭載し，
+  設計上の磁石・壁面間のギャップを 5\,mm とした．
 
-\begin{figure}[H] 
-\centering 
-\includegraphics[width=0.3\textwidth]{ashimawari004.png} 
-\vspace{-3mm} 
-\caption{machine blueprint} \label{friction3} 
-\end{figure}
+  \begin{table}[h]
+      \begin{tabular}{ll}
+      \multicolumn{2}{l}{\textbf{Specification of Macinery}}                                                                  \\ \hline
+      \multicolumn{1}{l|}{Size}           & 400 * 300 * 200 (mm)                                                              \\ \hline
+      \multicolumn{1}{l|}{Weight}         & 8.18 (kg)                                                                         \\ \hline
+      \multicolumn{1}{l|}{Motor}          & \begin{tabular}[c]{@{}l@{}}DC Motor (MS-555VC) * 2\\ Output: 1800(W)\end{tabular} \\ \hline
+      \multicolumn{1}{l|}{Power source}   & Li-Po Graphene Battery (14.8V, 4000mAh, 100C)                                     \\ \hline
+      \multicolumn{1}{l|}{Wheels}         & Urethane Wheels (ROEKGA100-20-50-T10) * 2                                            \\ \hline
+      \multicolumn{1}{l|}{Controller}     & Wireless Controller (PS4 DualShock 4)                                             \\ \hline
+      \end{tabular}
+  \end{table}
+  
+  \subsection{スクレーパ機構の統合}
+  足回り機構に，
+  先行研究に基づき製作されたシリンダ駆動のスクレーパ機構を統合した（図2）．
+  リニアアクチュエータにより刃角の調整が可能であるが，
+  現状の機体構造では壁面に接地した後は角度が約40度に固定される仕様となっている．
 
-\begin{figure}[H] 
-\centering 
-\includegraphics[width=0.2\textwidth]{seisakukitai003.png} 
-\vspace{-3mm} 
-\caption{machine blueprint} \label{friction3} 
-\end{figure}
+  \begin{figure}[H] 
+  \centering 
+  \includegraphics[width=0.45\textwidth]{ashimawari004.png} 
+  \caption{開発した対向二輪式足回り機構} \label{fig:chassis} 
+  \end{figure}
+
+  \begin{figure}[H] 
+  \centering 
+  \includegraphics[width=0.35\textwidth]{seisakukitai005.png} 
+  \caption{スクレーパ機構を統合した実機外観} \label{fig:full_system} 
+  \end{figure}
+
 %===========================
-\section{機体性能評価}
+\section{評価実験}
 
-まず，足回り機構のみを用いた室内環境での走行評価を行い，
-磁気吸着による壁面走行の成立性を確認した．
-その後，スクレーパ機構を統合した機体を用いて，
-実橋梁の鋼製壁面における評価を実施した．
+  \subsection{室内走行試験}
+  まず，研究室前の鉄製防火扉において吸着・走行試験を行った．
+  機体は垂直壁面および天井面に安定して吸着保持し，
+  全方位への自在な旋回・走行が可能であることを確認した．
 
-評価の結果，機体は鋼製壁面に安定して吸着し，
-水平方向および鉛直方向への走行が可能であることを確認した．
-一方で，スクレーパによる連続的な自走剥離については，
-駆動トルクおよび吸着力が不足しており，成立が困難であった．
-しかし，スクレーパに初期的な切り込みを与えた後には，
-塗膜を剥離できることを確認した．
-また，安定走行が可能な刃角は約33度であることが分かった．
+  \subsection{実橋梁剥離実験}
+  IH加熱済みの実橋梁鋼製壁面にて剥離実験を行った．
+  まず自走による剥離を試みたが，
+  スクレーパを塗膜へ押し込む際の反力によって機体前方が壁面から浮上し，
+  後方の磁石が壁面に接触してスタックする現象が発生した．
+  一方で，あらかじめ手動で塗膜に微小な切り込み（剥離のきっかけ）を与えた場合，
+  その後の自走によって連続的に塗膜を剥離できることを確認した．
+
+  \begin{figure}[H] 
+  \centering 
+  \includegraphics[width=0.4\textwidth]{hagashita006.png} 
+  \vspace{-2mm} 
+  \caption{塗膜剥離実験の結果（手動切り込み後）} \label{fig:result} 
+  \end{figure}
 
 %===========================
-\section{考察}
+\section{考\hspace{2zw}言}
 
-塗膜剥離時にはスクレーパに大きな反力が作用し，
-磁石と壁面との距離が約5\,mmであったことから，
-吸着力が十分に発揮されなかったと考えられる．
-また，刃角を大きくして切り込みを行い，
-その後に刃を寝かせる手法が有効である可能性が示唆された．
-これらの結果から，吸着力の向上および刃角制御の最適化が，
-今後の課題である．
+実験により，
+自走剥離を成立させるためには「初期切り込み」における反力制御が最重要課題であることが判明した．
+企業担当者からの助言に基づくと，
+効率的な剥離には段階的な刃角制御が必要である．
+具体的には，初期切り込み時には約40度の大きな角度で塗膜を捉え，
+剥離開始後は約10度まで刃を寝かせる動的な制御が有効である可能性が高い．
+
+現在の機体は接地状態での角度変更に制限があり，
+これが自走剥離失敗の主因となった．
+また，反力による浮上を抑えるためには，
+磁石ギャップを現在の 5\,mm から 1\,mm 程度へ短縮し，
+法線方向の吸着剛性を大幅に高める必要がある．
 
 %===========================
 \section{結\hspace{2zw}言}
 
-本研究では，磁気吸着を用いた壁面走行型塗膜剥離機体を開発し，
-実橋梁を用いた評価を行った．
-その結果，壁面走行の成立性を確認するとともに，
-スクレーパ式塗膜剥離に必要な条件および課題を明らかにした．
+本研究では，
+鋼橋塗膜剥離の自動化に向け，
+新たな磁気吸着走行機体を開発し実証実験を行った．
+実験を通じて，
+単一刃角による自走剥離の困難さと，
+浮上防止のための吸着設計の重要性を明らかにした．
+今後は，接地状態での動的な刃角制御プログラムの実装と，
+吸着剛性を高めた新フレームの設計を課題とする．
 
 \end{document}
