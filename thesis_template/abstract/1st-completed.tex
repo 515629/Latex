@@ -50,7 +50,7 @@ from a 40-degree insertion angle to a 10-degree peeling angle—is crucial for a
 鋼橋の塗替え作業における塗膜剥離は，
 高所かつ過酷な環境下での重労働であり，
 作業者の負担軽減が急務である．
-日本橋梁との共同研究において，
+日本橋梁との共同研究において，%企業との共同研究においてにするかも
 これまで高周波誘導加熱（IH）を用いて塗膜を浮かせ，
 剥離を容易にする装置や，
 それを搭載したメカナムホイール式等の走行ロボットが開発されてきた．
@@ -64,25 +64,36 @@ from a 40-degree insertion angle to a 10-degree peeling angle—is crucial for a
 
 %===========================
 \section{機体構成}
+本章では，
+設計したロボットの具体的な構成について述べる.
 
   \subsection{足回り機構の設計}
   剥離作業は主に鉛直方向（一方向）の力を必要とするため，
   先行研究のメカナムホイール式ではなく，
   対向二輪とフリーローラーによる三点支持構造を採用した（図1）．
-  これにより，機体前方のスペースを確保しつつ，
+  これにより，機体前方の剥離機構設置スペースを確保しつつ，
   壁面への追従性を高めた．
-  吸着部には角型皿穴付ネオジム磁石（N40，$35 \times 20 \times 5$\,mm，表面磁束密度 255\,mT）を計20個搭載し，
-  設計上の磁石・壁面間のギャップを 5\,mm とした．
+
+  吸着部には角型皿穴付ネオジム磁石を計20個搭載した. 
+  剥離作業時にスクレーパから受ける反力モーメントを考慮し， 
+  吸着剛性を高めるべく機体前方に12箇所，
+  後方に8箇所と磁石配置を傾斜配分した. 
+  これにより，合計約182\,kgf（理論値）の総吸着力を確保した. 
+  なお，設計上の磁石・壁面間のギャップは 5\,mm とした．
+
+  駆動輪には高い摩擦係数を持つウレタンホイールを採用し，
+  吸着力によって生じる法線抗力を最大限に利用して剥離に必要な推進力を確保する設計とした．
+  機体の主要諸元を以下の表に示す.
 
   \begin{table}[h]
       \begin{tabular}{ll}
-      \multicolumn{2}{l}{\textbf{Specification of Macinery}}                                                                  \\ \hline
-      \multicolumn{1}{l|}{Size}           & 400 * 300 * 200 (mm)                                                              \\ \hline
-      \multicolumn{1}{l|}{Weight}         & 8.18 (kg)                                                                         \\ \hline
-      \multicolumn{1}{l|}{Motor}          & \begin{tabular}[c]{@{}l@{}}DC Motor (MS-555VC) * 2\\ Output: 1800(W)\end{tabular} \\ \hline
-      \multicolumn{1}{l|}{Power source}   & Li-Po Graphene Battery (14.8V, 4000mAh, 100C)                                     \\ \hline
-      \multicolumn{1}{l|}{Wheels}         & Urethane Wheels (ROEKGA100-20-50-T10) * 2                                            \\ \hline
-      \multicolumn{1}{l|}{Controller}     & Wireless Controller (PS4 DualShock 4)                                             \\ \hline
+      \multicolumn{2}{l}{\textbf{Specifications of the System}}                            \\ \hline
+      \multicolumn{1}{l|}{Size}           & 400 * 300 * 200 (\,mm)                         \\ \hline
+      \multicolumn{1}{l|}{Weight}         & 8.18 (\,kg)                                    \\ \hline
+      \multicolumn{1}{l|}{Motor}          & DC Motor (MS-555VC) * 2                        \\ \hline
+      \multicolumn{1}{l|}{Power source}   & \begin{tabular}[c]{@{}l@{}}Li-Poly Battery\\ (14.8V, 4000mAh, 100C)\end{tabular}        \\ \hline
+      \multicolumn{1}{l|}{Wheels}         & \begin{tabular}[c]{@{}l@{}}Urethane Wheels\\ (ROEKGA100-20-50-T10) * 2\end{tabular}        \\ \hline
+      \multicolumn{1}{l|}{Controller}     & \begin{tabular}[c]{@{}l@{}}Wireless Controller\\ (PS4 DualShock 4)\end{tabular}        \\ \hline
       \end{tabular}
   \end{table}
   
@@ -94,13 +105,13 @@ from a 40-degree insertion angle to a 10-degree peeling angle—is crucial for a
 
   \begin{figure}[H] 
   \centering 
-  \includegraphics[width=0.45\textwidth]{ashimawari004.png} 
+  \includegraphics[width=0.35\textwidth]{ashimawari004.png} 
   \caption{開発した対向二輪式足回り機構} \label{fig:chassis} 
   \end{figure}
 
   \begin{figure}[H] 
   \centering 
-  \includegraphics[width=0.35\textwidth]{seisakukitai005.png} 
+  \includegraphics[width=0.28\textwidth]{seisakukitai005.png} 
   \caption{スクレーパ機構を統合した実機外観} \label{fig:full_system} 
   \end{figure}
 
@@ -122,13 +133,13 @@ from a 40-degree insertion angle to a 10-degree peeling angle—is crucial for a
 
   \begin{figure}[H] 
   \centering 
-  \includegraphics[width=0.4\textwidth]{hagashita006.png} 
+  \includegraphics[width=0.3\textwidth]{hagashita006.png} 
   \vspace{-2mm} 
   \caption{塗膜剥離実験の結果（手動切り込み後）} \label{fig:result} 
   \end{figure}
 
 %===========================
-\section{考\hspace{2zw}言}
+\section{考\hspace{2zw}察}
 
 実験により，
 自走剥離を成立させるためには「初期切り込み」における反力制御が最重要課題であることが判明した．
@@ -154,5 +165,13 @@ from a 40-degree insertion angle to a 10-degree peeling angle—is crucial for a
 浮上防止のための吸着設計の重要性を明らかにした．
 今後は，接地状態での動的な刃角制御プログラムの実装と，
 吸着剛性を高めた新フレームの設計を課題とする．
+
+\vspace{5truemm} {
+  \footnotesize 
+  \begin{thebibliography}{99} 
+  \bibitem{magnetic-clawlar2} IH塗膜除去工法研究会 
+  \url{http://ih-tmk.com} （参照日 2025年12月19日） 
+\end{thebibliography} } 
+\normalsize
 
 \end{document}
