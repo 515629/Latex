@@ -1,19 +1,19 @@
-\documentclass[10pt]{jarticle} 
-\usepackage{float} 
-\usepackage{adrobo_abst} 
-\usepackage[dvipdfmx]{graphicx} 
-\usepackage{amssymb,amsmath} 
-\usepackage{bm} 
-\usepackage[superscript]{cite} 
-\usepackage{enumerate} 
-\usepackage{url} 
-\usepackage{comment} 
-%\usepackage[absolute]{textpos} 
+\documentclass[10pt]{jarticle}
+\usepackage{float}
+\usepackage{adrobo_abst}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amssymb,amsmath}
+\usepackage{bm}
+\usepackage[superscript]{cite}  % superscriptオプションで上付きにする
+\renewcommand\citeform[1]{[#1]} % 引用番号を [] で囲むように定義
+\usepackage{enumerate}
+\usepackage{url}
+\usepackage{comment}
+% \renewcommand\citeform[1]{(#1)} % カッコを () に変える命令を削除
+\setlength\intextsep{5pt}
+\setlength\textfloatsep{5pt}
+\graphicspath{{../fig/}}
 
-\setlength\intextsep{5pt} 
-\setlength\textfloatsep{5pt} 
-\renewcommand\citeform[1]{(#1)} 
-\graphicspath{{../fig/}} 
 \begin{document}
 
 \makeatletter
@@ -52,8 +52,8 @@ from a 40-degree insertion angle to a 10-degree peeling angle—is crucial for a
 作業者の負担軽減が急務である．
 日本橋梁との共同研究において，%企業との共同研究においてにするかも
 これまで高周波誘導加熱（IH）を用いて塗膜を浮かせ，
-剥離を容易にする装置や，
-それを搭載したメカナムホイール式等の走行ロボットが開発されてきた．
+剥離を容易にする装置\cite{ref1}や，
+それを搭載したメカナムホイール式等の走行ロボット\cite{ref2}が開発されてきた．
 しかし，加熱後に浮いた塗膜をスクレーパで剥がす工程は依然として人手に依存しており，
 この「剥離工程」の自動化が新たな課題となっている．
 
