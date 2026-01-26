@@ -1,29 +1,31 @@
-﻿　%←スペース用全角スペース()
-\vspace{20mm}
+﻿\vspace*{20mm} % ページ上部の余白調整
 \renewcommand{\abstractname}{\LARGE 要旨}
 \begin{abstract}
-  \vspace{3mm}
-  本研究は, オリエンタル白石株式会社と共同で行い, ニューマチックケーソン工法（以下ケーソン工法）において必要となる運搬ロボットについて研究を行う.
+  \vspace{5mm}
+  本研究は，日本橋梁株式会社との共同研究として，
+  鋼橋の塗膜剥離作業を自動化するための磁気吸着式壁面走行システムの開発を目的としたものである．
 
-  ケーソン工法とは, 地上に構築した構造物の直下を掘削・排土する事で, 地下に沈設する工法である.
-  掘削を行う作業空間は地下水の侵入を防ぐために高圧な環境下であり, 人体に影響が出る為作業の無人化が求められている.
-    
-  現在はクローラ型のロボットが作業しているが, 作業空間は泥濘地でありスタックを起こす可能性がある.
+  現在，鋼橋の塗り替えにおける塗膜剥離作業は，
+  高所かつ過酷な環境下での手作業に依存しており，
+  作業者の負担軽減が急務となっている．
+  先行研究では，
+  高周波誘導加熱（IH）を用いて塗膜を浮かせ，
+  剥離を容易にする装置や走行ロボットが開発されてきたが，
+  最終的なスクレーパによる剥離工程は依然として手作業による部分が多い．
 
-  クローラ型のロボットがスタックする原因として, 旋回時に履帯の側面で地面を掘ることや, 側面方向の障害物に弱い点が挙げられる.
+  本研究では，
+  剥離作業時の安定性を確保するため，
+  2輪駆動と1つのフリーローラによる三点支持構造を採用した専用の移動機体を開発した．
+  本システムは20個のネオジム磁石を備え，
+  壁面との間に5mmの距離を保持して走行する設計となっている．
 
-  泥濘地でのスタックを防止するロボットの開発を目的とする.
+  実橋梁でのフィールドテストの結果，
+  自走による剥離試行時にスクレーパが受ける反力によって機体前方が壁面から浮上し，
+  スタック（走行不能）となる現象が確認された．
+  一方で，手動による初期切削を行った後では，
+  自走による安定した剥離が可能であることを確認した．
+
+  本研究の成果および共同研究先からの知見により，
+  自動剥離の完全実現には，
+  刃先の貫入角度40度から剥離角度10度へ動的に刃角を制御する機構の実装が極めて重要であることが示唆された．
 \end{abstract}
-
-\vspace{20mm}
-\renewcommand{\abstractname}{\LARGE Abstract}
-\begin {abstract}
-This paper describes the development of a transport robot with a mechanism that can prevent the robot from getting stuck in muddy ground.
-    This paper is intended for use in the method used when sinking structures underground, which is being performed by Oriental Shiraishi Co.
-    This method requires excavation directly under the structure to create a space up to a certain depth, but because of the high-pressure environment in the space and its adverse effects on the human body, unmanned operations are being promoted.
-    However, the crawler-type robots currently in use get stuck in muddy areas, and a robot with a mechanism to prevent getting stuck is needed.
-    I focused on mud and other obstacles getting caught on the sides of the crawler as a cause of stuckness.
-    We thought we could prevent the stacks by separating the drive units of the fuselage into separate units and deforming the orientation of the drive units into a circular shape.
-
-  \end {abstract}
-

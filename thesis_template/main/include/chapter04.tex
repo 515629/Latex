@@ -1,164 +1,33 @@
-%第3章
-\newpage
-\part{機体性能の評価実験}
-今回は現場ヤードでの性能を検証するため, 想定環境での走行実験と段差踏破の実験を行った.
+% 第4章
+\part{評価実験}
+\label{experiment}
 
-\section{走行実験}
-研究目標でも示した通り, 現場ヤードでは以下の3つの環境が想定される.
+\section{室内走行試験}
+実橋梁での実験に先立ち，
+学内にて吸着および移動性能の検証を行った．
+鉄製の防火扉（垂直面および天井面）を用いた走行試験の結果，
+機体重量15kgに対し十分な保持力を有し，
+スリップすることなく自在な移動（前後進・その場旋回）が可能であることを確認した．
+これにより，三点支持構造が壁面の微細な不陸を吸収し，
+常にトルクを伝達できていることを実証した．
 
-\begin{itemize}
-  \item 鉄板
-  \item コンクリート
-  \item アスファルト
-\end{itemize}
+\section{実橋梁剥離実験}
+\subsection{実験条件とIH加熱の併用}
+日本橋梁株式会社の協力のもと，
+実橋梁壁面において実験を実施した．
+対象面はIH加熱装置により事前に塗膜の付着力を低下させた状態とした．
 
-それぞれの環境で1mの走行実験を行い, かかる時間のデータから走行性能を評価する.
+\subsection{実験結果1：完全自走による剥離の試行}
+遠隔操作による完全自走での剥離を試みたところ，
+スクレーパを塗膜へ押し込み走行を開始した直後，
+機体前方が壁面から数ミリ浮上する現象が発生した．
+この浮上により磁石距離が拡大して吸着力が低下し，
+駆動輪が空転してスタックした．
+これは，40度の刃角によって発生した過大な法線抗力が，
+前方の磁気吸着力を上回った結果であると考えられる．
 
-実験風景を図\ref{zikkenn_image1_1}, \ref{zikkenn_image1_2}, \ref{zikkenn_image1_3}に示す.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{zikkenn_image1.png}
-  \vspace{2mm}
-  \caption{Driving experiment on iron plate}
-  \label{zikkenn_image1_1}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{zikkenn_image2.png}
-  \vspace{2mm}
-  \caption{Driving experiment on concrete}
-  \label{zikkenn_image1_2}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{zikkenn_image3.png}
-  \vspace{2mm}
-  \caption{Driving experiment on asphalt}
-  \label{zikkenn_image1_3}
-\end{figure}
-
-\subsection{理論値の算出}
-走行スピードはモータの性能とプログラムに依存する為, モータの性能から出される理論値との比較を行う. なお本機体は8輪でありモータにかかる負荷は均一ではない為, 今回の実験には機体重量によるモータへの負荷は考慮せず, また風などの外力も考慮しないものとする.
-
-理論値は以下の式より算出する.
-
-\begin{figure}[H]
-  \includegraphics[width=0.9\textwidth]{rironnti.png}
-\end{figure}
-
-
-\subsection{実験結果}
-
-上記の実験より得られたデータを表 \ref{friction}に示す.
-\vspace{-2mm}
-
-\begin{table}[h]
-    \centering
-    \caption{Driving experiment}
-    \scalebox{1.5}{
-    \begin{tabular}{ccc}
-    environment           & distance traveled      \\ \hline
-    theoretical value     & 26.53 [mm/s]            \\
-    iron plate            & 24.39 [mm/s]            \\
-    concrete              & 25.64 [mm/s]            \\
-    asphalt               & 26.32 [mm/s]
-    \end{tabular}
-    }
-    \label{friction}
-  \end{table}
-    
-実験の結果, 理論値にかなり近い走行性能を出せることが分かった.
-これにより, 変形機構を搭載した事による平地での走行性能への影響はないと考えられる.
-
-また, データより摩擦係数の高い環境ほど走行効率が高いことも示されている.
-
-
-\newpage
-
-\section{段差踏破実験}
-
-車輪数の多い機体には段差踏破時のタイムロスが考えられる.
-そのため, 踏破可能な高さの検証と, 高さの変化による走行時間の変化の検証を行うことで段差踏破性能の評価を行う.
-
-\subsection{直進時の段差踏破実験}
-直進時は, 進行方向に対して段差がある場合に車輪数による走行への影響を最も受ける可能性がある.
-よって全ての車輪が段差を踏破するまでに生じるロスの検証を行う.
-
-実験風景を図\ref{zikkenn_image2_1}, \ref{zikkenn_image2_2}に示す.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{zikkenn_image4.png}
-  \vspace{2mm}
-  \caption{Step-climbing experiment with straight motion1}
-  \label{zikkenn_image2_1}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{zikkenn_image5.png}
-  \vspace{2mm}
-  \caption{Step-climbing experiment with straight motion2}
-  \label{zikkenn_image2_2}
-\end{figure}
-
-
-\newpage
-\subsection{旋回時の段差踏破実験}
-旋回時の段差踏破は先行機体であるクローラ型移動ロボットでは不可能である.
-
-本機体の有用性を証明するため, 機体の両側面に障害物を配置して踏破可能であるかの実験を行う.
-また, 直進時と同様に車輪数による走行への影響の検証も行う.
-
-実験風景を図\ref{zikkenn_image3_1}, \ref{zikkenn_image3_2}に示す.
-
-\begin{figure}[H]
-  \begin{minipage}{0.45\hsize}
-    \centering
-    \includegraphics[height=60mm]{zikkenn_image6.png}
-    \caption{Step-crossing experiment using turning motion1}
-    \label{zikkenn_image3_1}
-  \end{minipage}
-  \begin{minipage}{0.5\hsize}
-    \centering
-    \includegraphics[height=60mm]{zikkenn_image7.png}
-    \caption{Step-crossing experiment using turning motion2}
-    \label{zikkenn_image3_2}
-  \end{minipage}
-\end{figure}
-
-
-\subsection{実験結果}
-上記の実験より得られたデータを表 \ref{friction2}に示す.
-\vspace{-2mm}
-
-\begin{table}[h]
-    \centering
-    \caption{Step-crossing experiment}
-    \scalebox{1.5}{
-    \begin{tabular}{ccc}
-    step height    & crossing time     & turning time  \\ \hline
-    0 [mm]          & 32 [s]       & 26 [s]          \\
-    6 [mm]          & 32 [s]       & 24 [s]          \\
-    12 [mm]         & 33 [s]       & 28 [s]          \\
-    18 [mm]         & 32 [s]       & 27 [s]          \\
-    24 [mm]         & 34 [s]       & 29 [s]
-    \end{tabular}
-    }
-    \label{friction2}
-\end{table}
-
-実験の結果, 本機体では直進時の段差踏破は可能であり, またクローラ型移動ロボットでは踏破不可能な機体両側面の段差も問題なく踏破可能であった.
-
-また実験データより, 直進時と旋回時どちらも段差の高さによる走行スピードへの影響はほとんど無かった.
-これは, サスペンション機構を搭載し上下方向に自由度を持たせることで, タイムロスを抑える事ができたと考えられる.
-
-
-
-
-
-
-
+\subsection{実験結果2：初期切削後の自走剥離成功}
+次に，あらかじめ手動で数センチ程度の初期切削（きっかけ）を設けた状態から自走を開始した．
+その結果，初期貫入時の衝撃的な反力を回避することで，
+自走による安定した剥離を継続できることを確認した．
+これにより，機体のポテンシャルとしては自走剥離が可能であることを実証した．
