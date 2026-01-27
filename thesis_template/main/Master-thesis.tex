@@ -14,6 +14,17 @@
 \usepackage{siunitx}
 
 \usepackage[final]{pdfpages}
+\usepackage[superscript]{cite}  % superscriptオプションで上付きにする
+\renewcommand\citeform[1]{[#1]} % 引用番号を [] で囲むように定義
+\usepackage{enumerate}
+
+
+% \renewcommand\citeform[1]{(#1)} % カッコを () に変える命令を削除
+\setlength\intextsep{5pt}
+\setlength\textfloatsep{5pt}
+\graphicspath{{../fig/}}
+
+
 
 %\lhead{}%ヘッダ左上を空白化
 \graphicspath{{../fig/}}%\includegraphicsのファイル名省略用

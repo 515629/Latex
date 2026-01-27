@@ -3,6 +3,27 @@
 \label{design}
 
 \section{機体コンセプトと足回り機構}
+
+\subsection{機体諸元}
+開発した機体の主要諸元をTable \ref{tab:specs_detail}に示す．
+\begin{table}[H]
+  \centering
+  \caption{Detailed specifications of the robot}
+  \label{tab:specs_detail}
+  \begin{tabular}{|l|l|}
+    \hline
+    項目 & 内容・数値 \\ \hline \hline
+    外形寸法 & L500 $\times$ W400 $\times$ H250 [mm] \\ \hline
+    機体総重量 & 約 15.0 [kg] \\ \hline
+    吸着磁石 & ネオジム磁石 (N52) $\times$ 20 個 \\ \hline
+    壁面ギャップ & 5.0 [mm] \\ \hline
+    駆動モータ & DCギヤードモータ \\ \hline
+    制御方式 & 2.4GHz 無線通信 (DualShock 4) \\ \hline
+  \end{tabular}
+\end{table}
+
+\newpage
+
 \subsection{三点支持構造による接地安定性の確保}
 壁面走行ロボットにおいて，
 全車輪が常に壁面に接地しトルクを伝達することは，
@@ -18,7 +39,7 @@
   \centering 
   \includegraphics[width=0.6\textwidth]{santen.png} 
   \vspace{-2mm} 
-  \caption{Peeling test results (after manual cut)} \label{fig:result} 
+  \caption{Three-point support mechanism using industrial urethane rollers} \label{fig:result} 
   \end{figure}
 
 \newpage
@@ -56,7 +77,7 @@
   \centering 
   \includegraphics[width=0.6\textwidth]{ashimawari004.png} 
   \vspace{-2mm} 
-  \caption{Peeling test results (after manual cut)} \label{fig:result} 
+  \caption{Aluminum profile frame structure and modular assembly} \label{fig:result} 
   \end{figure}
 \newpage
 
@@ -72,7 +93,7 @@
   \centering 
   \includegraphics[width=0.6\textwidth]{haiti.png} 
   \vspace{-2mm} 
-  \caption{Peeling test results (after manual cut)} \label{fig:result} 
+  \caption{Asymmetric layout of neodymium magnets (12 front, 8 back)} \label{fig:result} 
   \end{figure}
 \newpage
 
@@ -89,6 +110,6 @@
   \centering 
   \includegraphics[width=0.6\textwidth]{gap.png} 
   \vspace{-2mm} 
-  \caption{Peeling test results (after manual cut)} \label{fig:result} 
+  \caption{Side view of the robot showing the 5.0 mm clearance between the magnets and the wall surface} \label{fig:result} 
   \end{figure}
 \newpage
